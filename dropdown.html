@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .dropdown2 {
+            display: inline-block;
+            margin: 10px;
+        }
+        
+        .dropdownHeading {
+            padding: 10px;
+            background-color: aliceblue;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        .dropdownMenu {
+            max-height: 0;
+            padding: 0 10px;
+            overflow: hidden;
+            background-color: aliceblue;
+            width: inherit;
+            transition: 1s ease;
+        }
+
+        .links {
+            padding: 10px 0;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="dropdown2">
+        <p class="dropdownHeading">Dropdown</p>
+        <div class="dropdownMenu">
+            <p class="links">Link 1</p>
+            <p class="links">Link 2</p>
+            <p class="links">Link 3</p>
+        </div>
+    </div>
+    <div>Hello</div>
+
+    <script>
+        const dropdownHeading = document.getElementsByClassName("dropdownHeading")[0];
+        
+        
+        dropdownHeading.addEventListener("click", function() {
+            const dropDownMenu = this.nextElementSibling;
+            console.log(dropDownMenu)
+            if(dropDownMenu.style.maxHeight) {
+                dropDownMenu.style.maxHeight = null;
+            } else {
+                dropDownMenu.style.maxHeight = dropDownMenu.scrollHeight + "px";
+            }
+        })
+    </script>
+</body>
+</html>
